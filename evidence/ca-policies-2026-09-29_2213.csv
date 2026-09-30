@@ -1,0 +1,7 @@
+"DisplayName","State"
+"CA001 - All Users - Require MFA","enabledForReportingButNotEnforced"
+"CA002 - All Users - Block Legacy Authentication","enabledForReportingButNotEnforced"
+"CA003 - All Users - Require Compliant Device","enabledForReportingButNotEnforced"
+"CA004 - All Users - Require MFA on Sign-in Risk","enabledForReportingButNotEnforced"
+"CA005 - All Users - Require Password Change on High User Risk","enabledForReportingButNotEnforced"
+"CA006 - Privileged Roles - Require Phishing-Resistant MFA","enabledForReportingButNotEnforced"

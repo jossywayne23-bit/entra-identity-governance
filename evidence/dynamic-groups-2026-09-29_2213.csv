@@ -1,0 +1,6 @@
+"DisplayName","MembershipRule"
+"IT Team","(user.department -eq ""IT"") and (user.accountEnabled -eq true)"
+"Marketing Team","(user.department -eq ""Marketing"") and (user.accountEnabled -eq true)"
+"HR Team","(user.department -eq ""HR"") and (user.accountEnabled -eq true)"
+"Sales Team","(user.department -eq ""Sales"") and (user.accountEnabled -eq true)"
+"Finance Team","(user.department -eq ""Finance"") and (user.accountEnabled -eq true)"
