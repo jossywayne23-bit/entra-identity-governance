@@ -1,0 +1,48 @@
+{
+  "tasks": [
+    {
+      "taskDefinitionId": "1b555e50-7f65-41d5-b514-5894a026d10d",
+      "executionSequence": 1,
+      "displayName": "Generate TAP and send email",
+      "isEnabled": true,
+      "description": "Generate a Temporary Access Pass and send it to the manager",
+      "arguments": [
+        {
+          "name": "tapLifetimeMinutes",
+          "value": "480"
+        },
+        {
+          "name": "tapIsUsableOnce",
+          "value": "true"
+        }
+      ],
+      "continueOnError": false
+    },
+    {
+      "taskDefinitionId": "70b29d51-b59a-4773-9280-8841dfd3f2ea",
+      "executionSequence": 2,
+      "displayName": "Send welcome email",
+      "isEnabled": true,
+      "description": "Send the welcome email",
+      "arguments": [],
+      "continueOnError": true
+    }
+  ],
+  "executionConditions": {
+    "trigger": {
+      "timeBasedAttribute": "employeeHireDate",
+      "@odata.type": "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger",
+      "offsetInDays": 0
+    },
+    "scope": {
+      "rule": "(department ne null)",
+      "@odata.type": "#microsoft.graph.identityGovernance.ruleBasedSubjectSet"
+    },
+    "@odata.type": "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions"
+  },
+  "displayName": "Joiner — onboarding tasks",
+  "isEnabled": false,
+  "category": "joiner",
+  "isSchedulingEnabled": false,
+  "description": "Credential bootstrap and notifications on the hire date. Account creation and state are owned by the provisioning pipeline."
+}

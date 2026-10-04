@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "taskDefinitionId": "52853a3e-f4e5-4eb8-bb24-1ac09a1da935",
+      "executionSequence": 1,
+      "displayName": "Send email before user’s last day",
+      "isEnabled": true,
+      "description": "Notify the manager ahead of the last working day",
+      "arguments": [],
+      "continueOnError": true
+    },
+    {
+      "taskDefinitionId": "8fa97d28-3e52-4985-b3a9-a1126f9b8b4e",
+      "executionSequence": 2,
+      "displayName": "Remove all licenses for user",
+      "isEnabled": true,
+      "description": "Reclaim licence assignments",
+      "arguments": [],
+      "continueOnError": true
+    }
+  ],
+  "executionConditions": {
+    "trigger": {
+      "timeBasedAttribute": "employeeLeaveDateTime",
+      "@odata.type": "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger",
+      "offsetInDays": -1
+    },
+    "scope": {
+      "rule": "(department ne null)",
+      "@odata.type": "#microsoft.graph.identityGovernance.ruleBasedSubjectSet"
+    },
+    "@odata.type": "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions"
+  },
+  "displayName": "Leaver — offboarding tasks",
+  "isEnabled": false,
+  "category": "leaver",
+  "isSchedulingEnabled": false,
+  "description": "Notifications and licence reclamation ahead of the last day. Account state is owned by the provisioning pipeline."
+}
